@@ -31,6 +31,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="tW7-8e-cih"/>
                                 </constraints>
                                 <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYt-sT-2ia"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSR-lU-t4P">
                                 <rect key="frame" x="20" y="177" width="374" height="34"/>
@@ -40,7 +43,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WP2-Y3-8N0">
                                 <rect key="frame" x="20" y="231" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0f-yk-1cC">
                                 <rect key="frame" x="20" y="355" width="127" height="30"/>
@@ -48,18 +51,22 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="i13-S8-O4K"/>
                                 </constraints>
                                 <state key="normal" title="Forgot Username?"/>
+                                <connections>
+                                    <action selector="forgotUsernameButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="AOc-TI-jJ1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svj-GX-zaY">
-                                <rect key="frame" x="162" y="300" width="90" height="42"/>
+                                <rect key="frame" x="147" y="300" width="120" height="42"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="NWv-vT-cIr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="NWv-vT-cIr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6d-cd-ghK"/>
                                     <segue destination="VoA-tw-JbO" kind="presentation" modalPresentationStyle="fullScreen" id="SLq-YS-zUe"/>
                                 </connections>
                             </button>
@@ -84,6 +91,11 @@
                             <constraint firstItem="WP2-Y3-8N0" firstAttribute="top" secondItem="QSR-lU-t4P" secondAttribute="bottom" constant="20" id="yBC-nK-rwc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="svj-GX-zaY" id="xn3-rR-5wy"/>
+                        <outlet property="passwordTextField" destination="WP2-Y3-8N0" id="pDj-2j-Ysx"/>
+                        <outlet property="usernameTextField" destination="QSR-lU-t4P" id="Cky-Ze-aHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,13 +125,16 @@
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hSP-lt-OXF" kind="unwind" unwindAction="unwindFor:" id="Aal-kV-JKN"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hands.sparkles.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-7A-Pnf">
-                                <rect key="frame" x="147" y="387.5" width="120" height="120"/>
+                                <rect key="frame" x="132" y="370" width="150" height="154.5"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="FiE-NK-sGf"/>
-                                    <constraint firstAttribute="height" constant="115.5" id="qIV-YF-0pV"/>
+                                    <constraint firstAttribute="width" constant="150" id="FiE-NK-sGf"/>
+                                    <constraint firstAttribute="height" constant="150" id="qIV-YF-0pV"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -135,8 +150,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nlz-jb-kZw"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="gWP-FP-jdu" id="WWz-kU-SRT"/>
+                        <outlet property="welcomeLabel" destination="yrH-Eb-i0R" id="Hmb-9l-etM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3w-Ea-gKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hSP-lt-OXF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="760.86956521739137" y="75"/>
         </scene>
