@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loginButton.layer.cornerRadius = 10
         
         NotificationCenter.default.addObserver(self,
@@ -35,7 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @objc private func keyboardWillShow(notification: NSNotification) {
         guard let _: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
                 NSValue else { return }
-            self.view.frame.origin.y = -100
+        self.view.frame.origin.y = -100
     }
 
     @objc private func keyboardWillHide() {
