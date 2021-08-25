@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let username = "User"
     let password = "Password"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 10
@@ -34,20 +33,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
-            NSValue {
-            let keyboardHeight = keyboardFrame.cgRectValue.height
-            let bottomSpace = self.view.frame.height - (loginButton.frame.origin.y +
-                                                            loginButton.frame.height)
-            
-            self.view.frame.origin.y -= keyboardHeight - bottomSpace + 20
-        }
+        guard let _: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
+                NSValue else { return }
+            self.view.frame.origin.y = -100
     }
-    
+
     @objc private func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
-    
     
     @IBAction private func loginButtonPressed() {
         if usernameTextField.text == username &&
@@ -56,9 +49,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             showAlert(title: "Invalid login or password",
                       message: "Please, enter correct login and password")
+            passwordTextField.text?.removeAll()
         }
     }
-    
     
     @IBAction func forgotUsernameButtonPressed() {
         showAlert(title: "Ooops!", message: "Username is User 😉")
@@ -67,7 +60,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(title: "Ooops!", message: "Password is Password 😉")
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userVC = segue.destination as? UserViewController else { return }
@@ -79,17 +71,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.text?.removeAll()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 }
 
-
 // MARK: - private methods
 extension ViewController {
     private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
