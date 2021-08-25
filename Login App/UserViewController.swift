@@ -20,9 +20,4 @@ class UserViewController: UIViewController {
         logoutButton.layer.cornerRadius = 10
         welcomeLabel.text = name
     }
-    
-    @IBAction func logoutButtonPressed() {
-        dismiss(animated: true)
-    }
-    
 }
