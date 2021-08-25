@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -21,12 +21,38 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 10
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
+            NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            let bottomSpace = self.view.frame.height - (loginButton.frame.origin.y +
+                                                            loginButton.frame.height)
+            
+            self.view.frame.origin.y -= keyboardHeight - bottomSpace + 20
+        }
+    }
+    
+    @objc private func keyboardWillHide() {
+        self.view.frame.origin.y = 0
     }
     
     
-    @IBAction func loginButtonPressed() {
-        if usernameTextField.text == username && passwordTextField.text == password {
-            performSegue(withIdentifier: "user", sender: self)
+    @IBAction private func loginButtonPressed() {
+        if usernameTextField.text == username &&
+            passwordTextField.text == password {
+            performSegue(withIdentifier: "user", sender: nil)
         } else {
             showAlert(title: "Invalid login or password",
                       message: "Please, enter correct login and password")
@@ -45,7 +71,6 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userVC = segue.destination as? UserViewController else { return }
-        
         userVC.name = "Welcome, \(usernameTextField.text ?? " ")!"
     }
     
@@ -59,11 +84,6 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 }
-
-
-
-
-
 
 
 // MARK: - private methods
