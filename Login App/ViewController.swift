@@ -22,21 +22,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         loginButton.layer.cornerRadius = 10
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         guard let _: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
                 NSValue else { return }
-        self.view.frame.origin.y = -100
+        view.frame.origin.y = -100
     }
 
     @objc private func keyboardWillHide() {
@@ -54,14 +56,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func forgotUsernameButtonPressed() {
-        showAlert(title: "Ooops!", message: "Username is User 😉")
-    }
-    
-    @IBAction func forgotPasswordButtonPressed() {
-        showAlert(title: "Ooops!", message: "Password is Password 😉")
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userVC = segue.destination as? UserViewController else { return }
         userVC.name = "Welcome, \(usernameTextField.text ?? " ")!"
@@ -70,6 +64,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         usernameTextField.text?.removeAll()
         passwordTextField.text?.removeAll()
+    }
+    
+    @IBAction func forgotUsernameButtonPressed() {
+        showAlert(title: "Ooops!", message: "Username is User 😉")
+    }
+    
+    @IBAction func forgotPasswordButtonPressed() {
+        showAlert(title: "Ooops!", message: "Password is Password 😉")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,
