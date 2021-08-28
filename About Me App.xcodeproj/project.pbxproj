@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		68CA0F5C26D4F26800572D07 /* Login App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Login App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68CA0F5C26D4F26800572D07 /* About Me App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "About Me App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CA0F5F26D4F26800572D07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68CA0F6126D4F26800572D07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		68CA0F6326D4F26800572D07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
@@ -42,7 +42,7 @@
 		68CA0F5326D4F26800572D07 = {
 			isa = PBXGroup;
 			children = (
-				68CA0F5E26D4F26800572D07 /* Login App */,
+				68CA0F5E26D4F26800572D07 /* About Me App */,
 				68CA0F5D26D4F26800572D07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		68CA0F5D26D4F26800572D07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				68CA0F5C26D4F26800572D07 /* Login App.app */,
+				68CA0F5C26D4F26800572D07 /* About Me App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		68CA0F5E26D4F26800572D07 /* Login App */ = {
+		68CA0F5E26D4F26800572D07 /* About Me App */ = {
 			isa = PBXGroup;
 			children = (
 				68CA0F5F26D4F26800572D07 /* AppDelegate.swift */,
@@ -67,15 +67,15 @@
 				68CA0F6A26D4F26C00572D07 /* LaunchScreen.storyboard */,
 				68CA0F6D26D4F26C00572D07 /* Info.plist */,
 			);
-			path = "Login App";
+			path = "About Me App";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		68CA0F5B26D4F26800572D07 /* Login App */ = {
+		68CA0F5B26D4F26800572D07 /* About Me App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68CA0F7026D4F26C00572D07 /* Build configuration list for PBXNativeTarget "Login App" */;
+			buildConfigurationList = 68CA0F7026D4F26C00572D07 /* Build configuration list for PBXNativeTarget "About Me App" */;
 			buildPhases = (
 				68CA0F5826D4F26800572D07 /* Sources */,
 				68CA0F5926D4F26800572D07 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "Login App";
+			name = "About Me App";
 			productName = "Login App";
-			productReference = 68CA0F5C26D4F26800572D07 /* Login App.app */;
+			productReference = 68CA0F5C26D4F26800572D07 /* About Me App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 68CA0F5726D4F26800572D07 /* Build configuration list for PBXProject "Login App" */;
+			buildConfigurationList = 68CA0F5726D4F26800572D07 /* Build configuration list for PBXProject "About Me App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				68CA0F5B26D4F26800572D07 /* Login App */,
+				68CA0F5B26D4F26800572D07 /* About Me App */,
 			);
 		};
 /* End PBXProject section */
@@ -291,12 +291,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Login App/Info.plist";
+				INFOPLIST_FILE = "About Me App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Login-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.About-Me-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,12 +309,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Login App/Info.plist";
+				INFOPLIST_FILE = "About Me App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Login-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.About-Me-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		68CA0F5726D4F26800572D07 /* Build configuration list for PBXProject "Login App" */ = {
+		68CA0F5726D4F26800572D07 /* Build configuration list for PBXProject "About Me App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68CA0F6E26D4F26C00572D07 /* Debug */,
@@ -333,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68CA0F7026D4F26C00572D07 /* Build configuration list for PBXNativeTarget "Login App" */ = {
+		68CA0F7026D4F26C00572D07 /* Build configuration list for PBXNativeTarget "About Me App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68CA0F7126D4F26C00572D07 /* Debug */,
