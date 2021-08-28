@@ -39,6 +39,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6828E2E026DACD5500E06F65 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68CA0F6326D4F26800572D07 /* LoginViewController.swift */,
+				68CA0F7326D4FEB400572D07 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6828E2E126DACDA200E06F65 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				68CA0F6526D4F26800572D07 /* Main.storyboard */,
+				68CA0F6A26D4F26C00572D07 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6828E2E226DACDEA00E06F65 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				68CA0F6826D4F26C00572D07 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6828E2E326DACE3600E06F65 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				68CA0F5F26D4F26800572D07 /* AppDelegate.swift */,
+				68CA0F6126D4F26800572D07 /* SceneDelegate.swift */,
+				68CA0F6D26D4F26C00572D07 /* Info.plist */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		6828E2E426DAD03C00E06F65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		68CA0F5326D4F26800572D07 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +101,11 @@
 		68CA0F5E26D4F26800572D07 /* About Me App */ = {
 			isa = PBXGroup;
 			children = (
-				68CA0F5F26D4F26800572D07 /* AppDelegate.swift */,
-				68CA0F6126D4F26800572D07 /* SceneDelegate.swift */,
-				68CA0F6326D4F26800572D07 /* LoginViewController.swift */,
-				68CA0F7326D4FEB400572D07 /* WelcomeViewController.swift */,
-				68CA0F6526D4F26800572D07 /* Main.storyboard */,
-				68CA0F6826D4F26C00572D07 /* Assets.xcassets */,
-				68CA0F6A26D4F26C00572D07 /* LaunchScreen.storyboard */,
-				68CA0F6D26D4F26C00572D07 /* Info.plist */,
+				6828E2E026DACD5500E06F65 /* ViewControllers */,
+				6828E2E426DAD03C00E06F65 /* Models */,
+				6828E2E126DACDA200E06F65 /* Storyboards */,
+				6828E2E226DACDEA00E06F65 /* Resources */,
+				6828E2E326DACE3600E06F65 /* Configurations */,
 			);
 			path = "About Me App";
 			sourceTree = "<group>";
@@ -291,7 +331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "About Me App/Info.plist";
+				INFOPLIST_FILE = "About Me App/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.About-Me-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,7 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "About Me App/Info.plist";
+				INFOPLIST_FILE = "About Me App/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,7 +357,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.About-Me-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

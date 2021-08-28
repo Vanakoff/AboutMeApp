@@ -39,7 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction private func loginButtonPressed() {
         if usernameTextField.text == username &&
             passwordTextField.text == password {
-            performSegue(withIdentifier: "user", sender: nil)
+            performSegue(withIdentifier: "welcome", sender: nil)
         } else {
             showAlert(title: "Invalid login or password",
                       message: "Please, enter correct login and password")
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let userVC = segue.destination as? WelcomeViewController else { return }
+        guard let userVC = segue.destination as? WelcomeViewController else { return } 
         userVC.name = "Welcome, \(usernameTextField.text ?? " ")!"
     }
     
