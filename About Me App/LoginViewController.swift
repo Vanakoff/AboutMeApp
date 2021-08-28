@@ -81,7 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
 }
-// MARK: - Private Methods
+// MARK: Private Methods: Alert
 extension LoginViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
