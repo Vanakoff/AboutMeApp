@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Login App
 //
 //  Created by Andrey Vanakoff on 24/08/2021.
@@ -9,14 +9,15 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: IB Outlets
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var loginButton: UIButton!
-    
-    let username = "User"
-    let password = "Password"
-    
+    //MARK: Private properties
+    private let username = "User"
+    private let password = "Password"
+    //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,17 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
     }
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        guard let _: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
-                NSValue else { return }
-        view.frame.origin.y = -100
-    }
-
-    @objc private func keyboardWillHide() {
-        self.view.frame.origin.y = 0
-    }
-    
+    //MARK: Navigation
     @IBAction private func loginButtonPressed() {
         if usernameTextField.text == username &&
             passwordTextField.text == password {
@@ -57,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let userVC = segue.destination as? UserViewController else { return }
+        guard let userVC = segue.destination as? WelcomeViewController else { return }
         userVC.name = "Welcome, \(usernameTextField.text ?? " ")!"
     }
     
@@ -65,13 +56,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.text?.removeAll()
         passwordTextField.text?.removeAll()
     }
-    
+    //MARK: IB Actions
     @IBAction func forgotUsernameButtonPressed() {
         showAlert(title: "Ooops!", message: "Username is User 😉")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(title: "Ooops!", message: "Password is Password 😉")
+    }
+    // MARK: Keyboard Actions
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        guard let _: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
+                NSValue else { return }
+        view.frame.origin.y = -100
+    }
+    
+    @objc private func keyboardWillHide() {
+        self.view.frame.origin.y = 0
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,
@@ -80,8 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
 }
-
-// MARK: - private methods
+// MARK: - Private Methods
 extension LoginViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,

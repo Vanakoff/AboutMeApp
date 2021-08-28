@@ -13,7 +13,7 @@
 		68CA0F6726D4F26800572D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68CA0F6526D4F26800572D07 /* Main.storyboard */; };
 		68CA0F6926D4F26C00572D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CA0F6826D4F26C00572D07 /* Assets.xcassets */; };
 		68CA0F6C26D4F26C00572D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68CA0F6A26D4F26C00572D07 /* LaunchScreen.storyboard */; };
-		68CA0F7426D4FEB400572D07 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA0F7326D4FEB400572D07 /* UserViewController.swift */; };
+		68CA0F7426D4FEB400572D07 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA0F7326D4FEB400572D07 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		68CA0F6826D4F26C00572D07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68CA0F6B26D4F26C00572D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68CA0F6D26D4F26C00572D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68CA0F7326D4FEB400572D07 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		68CA0F7326D4FEB400572D07 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				68CA0F5F26D4F26800572D07 /* AppDelegate.swift */,
 				68CA0F6126D4F26800572D07 /* SceneDelegate.swift */,
-				68CA0F7326D4FEB400572D07 /* UserViewController.swift */,
+				68CA0F7326D4FEB400572D07 /* WelcomeViewController.swift */,
 				68CA0F6326D4F26800572D07 /* LoginViewController.swift */,
 				68CA0F6526D4F26800572D07 /* Main.storyboard */,
 				68CA0F6826D4F26C00572D07 /* Assets.xcassets */,
@@ -141,7 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68CA0F6426D4F26800572D07 /* LoginViewController.swift in Sources */,
-				68CA0F7426D4FEB400572D07 /* UserViewController.swift in Sources */,
+				68CA0F7426D4FEB400572D07 /* WelcomeViewController.swift in Sources */,
 				68CA0F6026D4F26800572D07 /* AppDelegate.swift in Sources */,
 				68CA0F6226D4F26800572D07 /* SceneDelegate.swift in Sources */,
 			);
