@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var logoutButton: UIButton!
     //MARK: Properties
-    var name: String!
+    var name = ""
     //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()

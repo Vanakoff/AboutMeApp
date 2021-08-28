@@ -80,6 +80,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            loginButtonPressed()
+        }
+        return true
+    }
 }
 // MARK: Private Methods: Alert
 extension LoginViewController {
