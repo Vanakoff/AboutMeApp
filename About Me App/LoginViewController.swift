@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 }
 
 // MARK: - private methods
-extension ViewController {
+extension LoginViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
                                       message: message,
