@@ -48,20 +48,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let tabBarController = segue.destination as! UITabBarController
-       
+        
         let viewControllers = tabBarController.viewControllers!
         
         for viewController in viewControllers {
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.name = "Welcome, \(person.name) \(person.surname)!"
+                welcomeVC.userPhoto = person.image
             } else if let navigationVC = viewController as? UINavigationController {
                 if let aboutVC = navigationVC.topViewController as? UserInfoViewController {
                     aboutVC.title = "\(person.name) \(person.surname)"
                     aboutVC.userInfo = person.bio
-                } else if let photoVC = navigationVC.topViewController as? PhotoViewController {
-                    photoVC.userImage = person.image!
-                    photoVC.photoLabel = person.bio
-                }
+                } 
             }
         }
     }

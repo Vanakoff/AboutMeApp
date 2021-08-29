@@ -11,13 +11,18 @@ class WelcomeViewController: UIViewController {
     //MARK: IB Outlets
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var logoutButton: UIButton!
+    
+    @IBOutlet var userImage: UIImageView!
     //MARK: Properties
     var name = ""
+    var userPhoto = UIImage()
     //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()
         
         logoutButton.layer.cornerRadius = 10
+        
         welcomeLabel.text = name
+        userImage.image = userPhoto
     }
 }
