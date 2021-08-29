@@ -14,9 +14,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var loginButton: UIButton!
-    //MARK: Private properties
-    private let username = "User"
-    private let password = "Password"
+     //MARK: Private properties
+//    private let username = "User"
+//    private let password = "Password"
+    
     //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     //MARK: Navigation
     @IBAction private func loginButtonPressed() {
-        if usernameTextField.text == username &&
-            passwordTextField.text == password {
+        if usernameTextField.text == userAndrey.username &&
+            passwordTextField.text == userAndrey.password {
             performSegue(withIdentifier: "welcome", sender: nil)
         } else {
             showAlert(title: "Invalid login or password",
@@ -48,8 +49,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let userVC = segue.destination as? WelcomeViewController else { return } 
-        userVC.name = "Welcome, \(usernameTextField.text ?? " ")!"
+        
+        let tabBarController = segue.destination as! UITabBarController
+       
+        let viewControllers = tabBarController.viewControllers!
+        
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.name = "Welcome, \(person.name) \(person.surname)!"
+            } else if let navigationVC = viewController as? UINavigationController {
+                if let aboutVC = navigationVC.topViewController as? UserInfoViewController {
+                    aboutVC.title = "\(person.name) \(person.surname)"
+                    aboutVC.userInfo = person.bio
+                    
+                }
+            }
+        }
+        
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {

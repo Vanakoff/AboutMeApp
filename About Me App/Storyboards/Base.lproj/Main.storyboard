@@ -162,7 +162,7 @@
                             <constraint firstItem="tCR-Yr-tms" firstAttribute="centerY" secondItem="ldI-WI-gAJ" secondAttribute="centerY" id="Qme-kQ-Fge"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="person" catalog="system" id="xL9-Z1-0Cq"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="hand.raised.fill" catalog="system" id="xL9-Z1-0Cq"/>
                     <navigationItem key="navigationItem" id="Nlz-jb-kZw"/>
                     <connections>
                         <outlet property="logoutButton" destination="gWP-FP-jdu" id="NXK-6I-4lA"/>
@@ -174,44 +174,37 @@
             </objects>
             <point key="canvasLocation" x="1549" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--User Info View Controller-->
         <scene sceneID="J80-Bs-Lgh">
             <objects>
-                <viewController id="6Ib-GQ-gOK" sceneMemberID="viewController">
+                <viewController id="6Ib-GQ-gOK" customClass="UserInfoViewController" customModule="About_Me_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkR-kC-FYv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="dpN-BB-QzM">
-                                <rect key="frame" x="137" y="215" width="46" height="138"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEv-Jk-NfF">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-Mf-6Jb">
-                                        <rect key="frame" x="0.0" y="54" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSv-RZ-wod">
-                                        <rect key="frame" x="0.0" y="108" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8K-Rx-vgw">
+                                <rect key="frame" x="16" y="64" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WEP-Vi-ghg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dpN-BB-QzM" firstAttribute="centerY" secondItem="zkR-kC-FYv" secondAttribute="centerY" id="7q0-tj-wl5"/>
-                            <constraint firstItem="dpN-BB-QzM" firstAttribute="centerX" secondItem="zkR-kC-FYv" secondAttribute="centerX" id="s6r-aB-mrK"/>
+                            <constraint firstItem="f8K-Rx-vgw" firstAttribute="top" secondItem="WEP-Vi-ghg" secondAttribute="top" constant="20" id="46S-1P-EkB"/>
+                            <constraint firstItem="WEP-Vi-ghg" firstAttribute="trailing" secondItem="f8K-Rx-vgw" secondAttribute="trailing" constant="16" id="OxS-Z4-hkI"/>
+                            <constraint firstItem="f8K-Rx-vgw" firstAttribute="leading" secondItem="WEP-Vi-ghg" secondAttribute="leading" constant="16" id="jtP-mG-ApM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e2A-dG-oLZ"/>
+                    <connections>
+                        <outlet property="userInfoLabel" destination="f8K-Rx-vgw" id="fyq-Lj-vp0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf2-Il-0zi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3242" y="74"/>
+            <point key="canvasLocation" x="3241.875" y="73.943661971830991"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sJU-hV-ehi">
@@ -254,8 +247,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
         <image name="hands.sparkles.fill" catalog="system" width="122" height="128"/>
-        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
