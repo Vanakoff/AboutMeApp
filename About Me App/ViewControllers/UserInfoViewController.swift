@@ -8,19 +8,13 @@
 import UIKit
 
 class UserInfoViewController: UIViewController {
-
-    
+    //MARK: IB Outlets
     @IBOutlet var userInfoLabel: UILabel!
-    
-   var userInfo = ""
-    
+    //MARK: Properties
+    var userInfo = ""
+    //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()
-
         userInfoLabel.text = userInfo
     }
-    
-
-
-
 }

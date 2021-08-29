@@ -14,9 +14,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var loginButton: UIButton!
-     //MARK: Private properties
-//    private let username = "User"
-//    private let password = "Password"
     
     //MARK: Settings
     override func viewDidLoad() {
@@ -38,8 +35,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     //MARK: Navigation
     @IBAction private func loginButtonPressed() {
-        if usernameTextField.text == userAndrey.username &&
-            passwordTextField.text == userAndrey.password {
+        if usernameTextField.text == user.username &&
+            passwordTextField.text == user.password {
             performSegue(withIdentifier: "welcome", sender: nil)
         } else {
             showAlert(title: "Invalid login or password",
@@ -61,11 +58,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 if let aboutVC = navigationVC.topViewController as? UserInfoViewController {
                     aboutVC.title = "\(person.name) \(person.surname)"
                     aboutVC.userInfo = person.bio
-                    
+                } else if let photoVC = navigationVC.topViewController as? PhotoViewController {
+                    photoVC.userImage = person.image!
+                    photoVC.photoLabel = person.bio
                 }
             }
         }
-        
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
