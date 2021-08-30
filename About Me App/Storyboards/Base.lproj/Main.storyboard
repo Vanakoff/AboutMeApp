@@ -118,31 +118,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="tCR-Yr-tms">
-                                <rect key="frame" x="35" y="91.5" width="250.5" height="385"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Cou-Lg-p0F">
+                                <rect key="frame" x="35" y="104" width="250.5" height="360.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Username!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrH-Eb-i0R">
                                         <rect key="frame" x="0.0" y="0.0" width="250.5" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250.5" id="x0U-8z-Zsg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250.5" id="IWl-BB-Igr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hands.sparkles.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-7A-Pnf">
-                                        <rect key="frame" x="50" y="110" width="150" height="154.5"/>
+                                        <rect key="frame" x="50" y="100" width="150" height="150"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="LNL-Zg-zOF"/>
-                                            <constraint firstAttribute="width" constant="150" id="O7L-vL-McS"/>
+                                            <constraint firstAttribute="height" constant="145.5" id="7rB-Z2-FEt"/>
+                                            <constraint firstAttribute="width" constant="150" id="Zpq-kC-6AN"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWP-FP-jdu">
-                                        <rect key="frame" x="65" y="343" width="120" height="42"/>
+                                        <rect key="frame" x="65" y="318.5" width="120" height="42"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="kH5-DQ-wWV"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="wHS-Fp-xWT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Log Out">
@@ -158,8 +158,11 @@
                         <viewLayoutGuide key="safeArea" id="6py-Cb-TGm"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="tCR-Yr-tms" firstAttribute="centerX" secondItem="ldI-WI-gAJ" secondAttribute="centerX" id="184-ck-d2Y"/>
-                            <constraint firstItem="tCR-Yr-tms" firstAttribute="centerY" secondItem="ldI-WI-gAJ" secondAttribute="centerY" id="Qme-kQ-Fge"/>
+                            <constraint firstItem="Cou-Lg-p0F" firstAttribute="centerX" secondItem="ldI-WI-gAJ" secondAttribute="centerX" id="J01-1M-HPn"/>
+                            <constraint firstItem="Cou-Lg-p0F" firstAttribute="centerY" secondItem="ldI-WI-gAJ" secondAttribute="centerY" id="yoL-hC-wFh">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-70"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-80"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="hand.raised.fill" catalog="system" id="xL9-Z1-0Cq"/>
