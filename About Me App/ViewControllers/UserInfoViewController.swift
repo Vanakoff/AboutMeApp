@@ -16,5 +16,6 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userInfoLabel.text = user.person.bio
+        self.title = user.person.fullName
     }
 }
