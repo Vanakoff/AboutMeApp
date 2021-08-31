@@ -11,10 +11,10 @@ class UserInfoViewController: UIViewController {
     //MARK: IB Outlets
     @IBOutlet var userInfoLabel: UILabel!
     //MARK: Properties
-    var userInfo = ""
+    var user: User!
     //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()
-        userInfoLabel.text = userInfo
+        userInfoLabel.text = user.person.bio
     }
 }

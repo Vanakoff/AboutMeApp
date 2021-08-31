@@ -14,15 +14,15 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet var userImage: UIImageView!
     //MARK: Properties
-    var name = ""
-    var userPhoto = UIImage()
+    var user: User!
+
     //MARK: Settings
     override func viewDidLoad() {
         super.viewDidLoad()
         
         logoutButton.layer.cornerRadius = 10
         
-        welcomeLabel.text = name
-        userImage.image = userPhoto
+        welcomeLabel.text = "Welcome, \(user.person.fullName)!"
+        userImage.image = UIImage(named: user.person.image)!
     }
 }
