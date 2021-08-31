@@ -18,4 +18,9 @@ class UserInfoViewController: UIViewController {
         userInfoLabel.text = user.person.bio
         self.title = user.person.fullName
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let photoVC = segue.destination as? PhotoViewController {
+            photoVC.user = user
+        }
+    }
 }

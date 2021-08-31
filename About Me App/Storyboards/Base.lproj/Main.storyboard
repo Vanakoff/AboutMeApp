@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Cou-Lg-p0F">
-                                <rect key="frame" x="35" y="104" width="250.5" height="360.5"/>
+                                <rect key="frame" x="35" y="101.5" width="250.5" height="365"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Username!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrH-Eb-i0R">
                                         <rect key="frame" x="0.0" y="0.0" width="250.5" height="33"/>
@@ -131,15 +131,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hands.sparkles.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-7A-Pnf">
-                                        <rect key="frame" x="50" y="100" width="150" height="150"/>
+                                        <rect key="frame" x="50" y="100" width="150" height="154.5"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="145.5" id="7rB-Z2-FEt"/>
+                                            <constraint firstAttribute="height" constant="150" id="7rB-Z2-FEt"/>
                                             <constraint firstAttribute="width" constant="150" id="Zpq-kC-6AN"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWP-FP-jdu">
-                                        <rect key="frame" x="65" y="318.5" width="120" height="42"/>
+                                        <rect key="frame" x="65" y="323" width="120" height="42"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="wHS-Fp-xWT"/>
@@ -201,7 +201,13 @@
                             <constraint firstItem="f8K-Rx-vgw" firstAttribute="leading" secondItem="WEP-Vi-ghg" secondAttribute="leading" constant="16" id="jtP-mG-ApM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="e2A-dG-oLZ"/>
+                    <navigationItem key="navigationItem" id="e2A-dG-oLZ">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="HZa-j0-Jq7">
+                            <connections>
+                                <segue destination="S6C-0G-hyY" kind="show" id="8e6-Dw-MEW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userInfoLabel" destination="f8K-Rx-vgw" id="fyq-Lj-vp0"/>
                     </connections>
@@ -209,6 +215,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf2-Il-0zi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3241.875" y="73.943661971830991"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="6hl-qY-F0d">
+            <objects>
+                <viewController id="S6C-0G-hyY" customClass="PhotoViewController" customModule="About_Me_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UIE-rt-N30">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hands.clap.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-51-Ch8">
+                                <rect key="frame" x="60" y="182.5" width="200" height="203"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9nn-pS-ia1"/>
+                                    <constraint firstAttribute="width" constant="200" id="a6S-yE-7qm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finish" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubF-7F-byb">
+                                <rect key="frame" x="16" y="478.5" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nxr-cc-Duq"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="NBT-51-Ch8" firstAttribute="centerX" secondItem="UIE-rt-N30" secondAttribute="centerX" id="HWy-42-ap6"/>
+                            <constraint firstItem="nxr-cc-Duq" firstAttribute="trailing" secondItem="ubF-7F-byb" secondAttribute="trailing" constant="16" id="PRe-8X-cRR"/>
+                            <constraint firstItem="ubF-7F-byb" firstAttribute="leading" secondItem="nxr-cc-Duq" secondAttribute="leading" constant="16" id="VGh-hy-Pbu"/>
+                            <constraint firstItem="NBT-51-Ch8" firstAttribute="centerY" secondItem="UIE-rt-N30" secondAttribute="centerY" id="ll8-hZ-wtU"/>
+                            <constraint firstItem="nxr-cc-Duq" firstAttribute="bottom" secondItem="ubF-7F-byb" secondAttribute="bottom" constant="20" id="ozK-JP-BID"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xpj-3K-zru"/>
+                    <connections>
+                        <outlet property="finishLabel" destination="ubF-7F-byb" id="ezp-Gk-yQ1"/>
+                        <outlet property="imageView" destination="NBT-51-Ch8" id="avg-m7-Ccj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5Z-NR-GDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3960" y="73.943661971830991"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sJU-hV-ehi">
@@ -252,6 +301,7 @@
     </scenes>
     <resources>
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
+        <image name="hands.clap.fill" catalog="system" width="128" height="113"/>
         <image name="hands.sparkles.fill" catalog="system" width="122" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">

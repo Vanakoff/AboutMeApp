@@ -11,7 +11,6 @@ class WelcomeViewController: UIViewController {
     //MARK: IB Outlets
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var logoutButton: UIButton!
-    
     @IBOutlet var userImage: UIImageView!
     //MARK: Properties
     var user: User!
@@ -21,6 +20,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         logoutButton.layer.cornerRadius = 10
+        userImage.layer.cornerRadius = userImage.frame.height / 2
         
         welcomeLabel.text = "Welcome, \(user.person.fullName)!"
         userImage.image = UIImage(named: user.person.image)!
